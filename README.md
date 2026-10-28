@@ -11,7 +11,7 @@ Event-driven serverless pipeline built and operated using AWS CLI:
 SNS Topic → Lambda (subscription) → DynamoDB  
                               ↳ CloudWatch Logs
 
-## Design decisions (Solutions Architect mindset)
+## Design decisions
 - Lambda kept **outside VPC** to avoid NAT Gateway / interface endpoint hourly costs and reduce operational complexity.
 - **Least privilege IAM** for the Lambda execution role (write to a single DynamoDB table + logging).
 - **On-demand DynamoDB** to prevent capacity planning and control spend for low/variable traffic.
